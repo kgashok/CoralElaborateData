@@ -1,0 +1,55 @@
+python setup.py build
+configuration error: `project.authors[0]` must be object
+GIVEN VALUE:
+    "Your Name <you@example.com>"
+
+OFFENDING RULE: 'type'
+
+DEFINITION:
+    {
+        "$id": "#/definitions/author",
+        "title": "Author or Maintainer",
+        "$comment": "https://peps.python.org/pep-0621/#authors-maintainers",
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+            "name": {
+                "type": "string",
+                "$$description": [
+                    "MUST be a valid email name, i.e. whatever can be put as a name, before an",
+                    "email, in :rfc:`822`."
+                ]
+            },
+            "email": {
+                "type": "string",
+                "format": "idn-email",
+                "description": "MUST be a valid email address"
+            }
+        }
+    }
+
+For more details about `format` see
+https://validate-pyproject.readthedocs.io/en/latest/api/validate_pyproject.formats.html
+
+Traceback (most recent call last):
+  File "/home/runner/workspace/setup.py", line 8, in <module>
+    setup(
+  File "/nix/store/wblvmd5y7izx0z10d1w7ga7zc4apjxmb-python3.11-setuptools-75.1.1/lib/python3.11/site-packages/setuptools/__init__.py", line 117, in setup
+    return distutils.core.setup(**attrs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/wblvmd5y7izx0z10d1w7ga7zc4apjxmb-python3.11-setuptools-75.1.1/lib/python3.11/site-packages/setuptools/_distutils/core.py", line 157, in setup
+    dist.parse_config_files()
+  File "/home/runner/workspace/.pythonlibs/lib/python3.11/site-packages/_virtualenv.py", line 22, in parse_config_files
+    result = old_parse_config_files(self, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/wblvmd5y7izx0z10d1w7ga7zc4apjxmb-python3.11-setuptools-75.1.1/lib/python3.11/site-packages/setuptools/dist.py", line 608, in parse_config_files
+    pyprojecttoml.apply_configuration(self, filename, ignore_option_errors)
+  File "/nix/store/wblvmd5y7izx0z10d1w7ga7zc4apjxmb-python3.11-setuptools-75.1.1/lib/python3.11/site-packages/setuptools/config/pyprojecttoml.py", line 71, in apply_configuration
+    config = read_configuration(filepath, True, ignore_option_errors, dist)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/wblvmd5y7izx0z10d1w7ga7zc4apjxmb-python3.11-setuptools-75.1.1/lib/python3.11/site-packages/setuptools/config/pyprojecttoml.py", line 139, in read_configuration
+    validate(subset, filepath)
+  File "/nix/store/wblvmd5y7izx0z10d1w7ga7zc4apjxmb-python3.11-setuptools-75.1.1/lib/python3.11/site-packages/setuptools/config/pyprojecttoml.py", line 60, in validate
+    raise ValueError(f"{error}\n{summary}") from None
+ValueError: invalid pyproject.toml config: `project.authors[0]`.
+configuration error: `project.authors[0]` must be object
