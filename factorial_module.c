@@ -2,8 +2,13 @@
 #include <Python.h>
 
 /* C implementation of factorial */
+//
+// unnecessary print statement 
+// can be commented out 
+// and re-installed again - see README.md
 static long
 fact(long n) {
+    printf("Calculating for %d\n", n);
     return (n <= 1) ? 1 : n * fact(n - 1);
 }
 

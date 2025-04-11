@@ -1,5 +1,7 @@
 import factorial_module
 
-print(factorial_module.factorial(5))   # → 120
+inp = input("Enter number: ")
+number = int(inp)
 
+print(factorial_module.factorial(number))
 

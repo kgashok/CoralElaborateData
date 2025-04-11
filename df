@@ -1,0 +1,12 @@
+Help on module factorial_module:
+
+NNAAMMEE
+    factorial_module - A module that computes factorial.
+
+FFUUNNCCTTIIOONNSS
+    ffaaccttoorriiaall(...)
+        Compute n! recursively.
+
+FFIILLEE
+    /home/runner/workspace/.pythonlibs/lib/python3.11/site-packages/python_template-0.1.0-py3.11-linux-x86_64.egg/factorial_module.cpython-311-x86_64-linux-gnu.so
+
