@@ -25,4 +25,4 @@ python3 main.py
 
 ### In the Python intrepreter
 
-![image](https://github.com/user-attachments/assets/8b2c9a29-16ba-4392-b0a4-27bdf7627396)
+![image](interpreter.png)
